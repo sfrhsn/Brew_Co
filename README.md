@@ -1,6 +1,6 @@
 # Project UTS Pemrograman Web - Website Brew & Co.
 
-Proyek ini merupakan Ujian Akhir Semester (UAS) untuk matakuliah Pemrograman Web (Program Studi: Sarjana Terapan Manajemen Informatika / Semester 3). Proyek ini bertujuan untuk membuat halaman website interaktif untuk sebuah *coffee shop* fiktif bernama "Brew & Co." menggunakan HTML, CSS, JavaScript, dan PHP. Hasil akhir proyek di-hosting di server GitHub.
+Proyek ini merupakan Ujian Akhir Semester (UAS) untuk matakuliah Pemrograman Web (Program Studi: Sarjana Terapan Manajemen Informatika / Semester 3). Proyek ini bertujuan untuk membuat halaman website interaktif untuk sebuah *coffee shop* fiktif bernama "Brew & Co." menggunakan CSS, JavaScript, dan PHP. Hasil akhir proyek di-hosting di server GitHub.
 
 ## Anggota Kelompok
 
@@ -31,31 +31,54 @@ Website ini telah di-hosting dan dapat diakses melalui tautan berikut:
 ```
 web_2/
 │
-├── assets/                   # Folder untuk aset media
-│   ├── images/              # Gambar-gambar website (menu, hero, dll)
-│   ├── script.js            # File JavaScript untuk interaktivitas
-│   └── style.css            # File styling CSS
+├── assets/                      # Aset publik website
+│   ├── images/                  # Gambar menu, banner, dll
+│   ├── script.js                # JavaScript frontend
+│   └── style.css                # CSS utama
 │
-├── config/                   # Folder konfigurasi
-│   └── database.php         # Konfigurasi koneksi database
+├── config/                      # Konfigurasi global
+│   └── database.php             # Koneksi database
 │
-├── handlers/                 # Folder untuk handler PHP (logic backend)
-│   ├── auth_handler.php     # Handler autentikasi user
-│   ├── cart_handler.php     # Handler keranjang belanja
-│   ├── get_menu.php         # Handler untuk mengambil data menu
-│   ├── order_handler.php    # Handler pemesanan
-│   └── review_handler.php   # Handler review/testimonial
+├── handlers/                    # Logic backend (user side)
+│   ├── auth_handler.php         # Autentikasi user
+│   ├── cart_handler.php         # Keranjang belanja
+│   ├── get_menu.php             # Ambil data menu
+│   ├── order_handler.php        # Pemesanan
+│   └── review_handler.php       # Review / testimonial
 │
-├── includes/                 # Folder untuk file PHP yang dapat di-include
-│   ├── footer.php           # Template footer
-│   ├── functions.php        # Fungsi-fungsi helper PHP
-│   ├── header.php           # Template header/navigasi
-│   └── navbar.php           # Template navigasi bar
+├── includes/                    # Komponen reusable (user side)
+│   ├── header.php               # Header
+│   ├── navbar.php               # Navbar
+│   ├── footer.php               # Footer
+│   └── functions.php            # Helper function
 │
-├── admin.php                 # Halaman admin dashboard
-├── brew_co.sql              # File database SQL
-├── index.php                # Halaman utama website
-└── README.md                # Dokumentasi proyek
+├── admin/                       
+│   │
+│   ├── config/
+│   │   └── admin_config.php     # Konfigurasi khusus admin
+│   │
+│   ├── controllers/
+│   │   └── AdminController.php  # Logic & kontrol admin
+│   │
+│   ├── views/
+│   │   ├── components/          # Komponen UI admin
+│   │   │   ├── header.php
+│   │   │   ├── footer.php
+│   │   │   ├── tabs.php
+│   │   │   ├── menu_section.php
+│   │   │   ├── orders_section.php
+│   │   │   ├── modal.php
+│   │   │   └── javascript.php
+│   │   │
+│   │   ├── admin_styles.php     # Styling khusus admin
+│   │   ├── dashboard.php        # Halaman dashboard admin
+│   │   └── login.php            # Login admin
+│   │
+│   └── index.php                # Entry point admin (pengganti admin.php)
+│
+├── brew_co.sql                  # Database SQL
+├── index.php                    # Halaman utama user
+└── README.md                    # Dokumentasi proyek
 ```
 
 ---
@@ -101,7 +124,8 @@ Atau gunakan paket seperti:
 
 5. **Akses Website**
    - Buka browser
-   - Ketik: `http://localhost/web_2/`
+   - Ketik: `http://localhost/web_2/index.php`
+            `http://localhost/web_2/admin`
    - Website akan terbuka
 
 #### Menggunakan PHP Built-in Server:
@@ -386,21 +410,6 @@ Atau gunakan paket seperti:
    - Filter berdasarkan tanggal
    - Search berdasarkan nama customer
 
-#### D. Mengelola Review/Testimonial
-1. Klik menu "Kelola Review" di dashboard
-2. Akan tampil daftar semua review dengan:
-   - Nama reviewer
-   - Rating (bintang)
-   - Komentar
-   - Tanggal review
-   - Status (Approved/Pending)
-3. **Approve Review:**
-   - Klik tombol "Approve" pada review
-   - Review akan tampil di website
-4. **Reject/Hapus Review:**
-   - Klik tombol "Hapus" pada review yang tidak sesuai
-   - Konfirmasi penghapusan
-   - Review akan dihapus dari database
 
 #### E. Logout Admin
 1. Klik tombol "Logout" di pojok kanan atas dashboard
