@@ -10,12 +10,6 @@ Proyek ini merupakan Ujian Akhir Semester (UAS) untuk matakuliah Pemrograman Web
 | Mochammad Dzaky Budi Praditya | 24091397033 |
 | Risda Sifa Hasna | 24091397054 |
 
-## Alamat Domain (Live Demo)
-
-Website ini telah di-hosting dan dapat diakses melalui tautan berikut:
-
-**https://kelompok7.2024b.my.id/**
-
 ## Teknologi yang Digunakan
 
 * **HTML5:** Untuk membangun struktur dan kerangka utama halaman web.
