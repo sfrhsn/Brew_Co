@@ -343,8 +343,8 @@ Atau gunakan paket seperti:
 #### A. Login Admin
 1. Akses halaman admin: `http://localhost/web_2/admin.php`
 2. Masukkan kredensial admin:
-   - Username/Email admin
-   - Password admin
+   - Username/Email admin (admin)
+   - Password admin (admin123)
 3. Klik "Login"
 4. Anda akan masuk ke dashboard admin
 
